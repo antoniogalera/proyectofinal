@@ -1,0 +1,11 @@
+:host {
+    ion-content {
+        --ion-background-color: linear-gradient(90deg, rgba(0,0,8,1) 0%, rgba(58,58,69,1) 32%, rgba(52,58,60,1) 75%);
+    }
+
+    ion-list {
+        &.list-md {
+            padding: 0;
+        }
+    }
+}

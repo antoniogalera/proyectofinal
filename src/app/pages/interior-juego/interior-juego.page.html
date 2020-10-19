@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar class="primary" >
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{juegoRecibido?.nombre}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="detail">
+        <div class="oferta-container">
+          <div class="cropped-main-image">
+            <div class="offer-container">
+              <h1 class="title">{{juegoRecibido?.nombre}}</h1>
+            </div>
+            <div class="fondoTitulo"></div>
+            <img [src]="juegoRecibido.imagen" class="img"  imageViewer>
+          </div>
+          <div class="container">
+
+            <div class="direccion">
+              <p class="subtitle1">
+                <img class="imgMenu" src="assets/iconos/direccion.png">
+                {{juegoRecibido.descripcion}}
+              </p>
+            </div>
+
+            <div class="validez">
+              <h2 class="title">FECHA DE LANZAMIENTO </h2>
+              <h2 class="title">{{juegoRecibido?.fecha_lanzamiento | date: 'dd-MM-yyyy'}}</h2>
+            </div>
+
+            <div class="validez">
+              <h2 class="title">Precio </h2>
+              <h2 class="title">{{juegoRecibido?.fecha_lanzamiento | date: 'dd-MM-yyyy'}}</h2>
+            </div>
+          </div>
+        </div>
+  </div>
+</ion-content>

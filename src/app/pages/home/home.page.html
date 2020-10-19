@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar class="user-profile">
+      <ion-buttons slot="start">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          <ion-text color="light">
+            <ion-text color="medium" class="fw700">GameCritic</ion-text>
+          </ion-text>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+          <ion-icon name="notifications"></ion-icon>
+          <ion-badge color="dark" slot="end"></ion-badge>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar class="user-profile">
+      <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
+      <ion-buttons slot="end">
+        <ion-button size="small" shape="round" color="medium" (click)="buscador()">
+          <ion-icon name="options"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="loaded-content">
+      <ion-card class="ofertas" *ngFor="let juego of arrayJuegos">
+            <div class="fondoNegroImagen"></div>
+            <div class="fondoBlancoImagen"></div>
+            <div class="imagenFondo">
+            <!--  <img [src]="juego.imagen ? juego.imagen  : 'assets/img/logos/logo-512.png'"> --> <!-- Esto se llama ternario, si juego.imagen existe y no es uno, el valor sera el q va despues del ?, Si ES NULO y no existe, puedes poner por ejemplo una imagen por defecto por ejemplo -->
+            <img [src]="juego?.imagen" style="max-height: 200px; max-width: auto;"/>
+            </div>
+            <div class="botonImagen">
+              <button class="oferta" (click)="verDetallesJuego(juego)">
+                <h2 class="oferta-nombre">{{juego?.nombre}}</h2>
+                <p class="bar-nombre">{{juego?.fecha_lanzamiento}}</p>
+                <p class="bar-distancia">{{juego?.precio}}</p>             
+                <br>
+              </button> 
+            </div>
+      </ion-card>
+  </div>
+</ion-content>
+
